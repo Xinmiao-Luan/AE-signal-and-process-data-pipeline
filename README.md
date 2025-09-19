@@ -31,7 +31,7 @@ Preprocessing utilities to prepare **AE spectrograms** and **process logs** for 
 
 ---
 
-### 📁 SpectrumProcessing
+### SpectrumProcessing
 Utilities for **spectrogram processing and alignment** of AE signals with external process data.
 
 **Modules**
@@ -48,7 +48,7 @@ Utilities for **spectrogram processing and alignment** of AE signals with extern
 
 ---
 
-### VAE (Variational Autoencoder)
+### VAE
 Implements **VAE training and feature extraction** for unsupervised learning from spectrograms.
 
 **Modules**
