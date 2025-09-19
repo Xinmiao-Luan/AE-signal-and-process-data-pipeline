@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # 1. Load and preprocess AE data
 # data dim: frequency x time stamp x # channel
 # 200 x 99 x 4 or 200 x 98 x 4
-#  for all channels
+# for all channels
 def load_mat_ae_data(folder_path):
     data_list = []
     for file in os.listdir(folder_path):
@@ -30,7 +30,8 @@ def load_mat_ae_data(folder_path):
     if not data_list:
         raise ValueError("No valid .mat files found in the folder.")
     return np.concatenate(data_list, axis=0).astype(np.float32)
-#  for one channel
+    
+# for one channel
 def load_mat_ae_data_freq_bin_view(folder_path, channel_idx=0):
     data_list = []
     for file in os.listdir(folder_path):
@@ -93,7 +94,7 @@ def vae_loss(recon_x, x, mu, logvar):
     kl_div = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
     return recon_loss + kl_div
 
-#  4. Train the VAE
+# 4. Train the VAE
 def train_vae_model(data, result_dir, input_dim=200, latent_dim=2, lr=1e-3, epochs=20, batch_size=32):
     os.makedirs(result_dir, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -148,25 +149,6 @@ def save_results(model, ae_data, result_dir):
     np.savetxt(os.path.join(result_dir, "reconstruction_errors.csv"), reconstruction_errors, delimiter=",")
 
 ## 6. Run
-
-# Class 3 - build infill
-# folder_path = '/Users/xluan3/Desktop/Projects/layer1to20/Class_3'
-# save_path = '/Users/xluan3/Desktop/Projects/layer1to20/result/result'
-# ae_data = load_mat_ae_data_freq_bin_view(folder_path,0)
-# ae_data_select = ae_data
-# result_dir = os.path.join(save_path, "result")
-# vae_model = train_vae_model(ae_data_select, result_dir)
-# save_results(vae_model, ae_data_select, result_dir)
-# # save ae
-# np.savetxt(os.path.join(save_path,'ae_raw_data_VAE_input.csv'), ae_data, delimiter=",")
-#
-# # check the size of latent_z and reconstructed
-# latent_z = np.load(os.path.join(save_path, 'result', 'latent_z.npy'))
-# print(latent_z.shape)
-# reconstructed = np.load(os.path.join(save_path, 'result', 'reconstructed.npy'))
-# print(reconstructed.shape)
-
-
 folder_path = '/Users/xluan3/Desktop/Projects/layer1to5/spectrograms'
 save_path = '/Users/xluan3/Desktop/Projects/layer1to5/change latent/result'
 ae_data = load_mat_ae_data_freq_bin_view(folder_path,0)
@@ -174,6 +156,7 @@ ae_data_select = ae_data
 result_dir = os.path.join(save_path, "result")
 vae_model = train_vae_model(ae_data_select, result_dir)
 save_results(vae_model, ae_data_select, result_dir)
+
 # save ae
 np.savetxt(os.path.join(save_path,'ae_raw_data_VAE_input.csv'), ae_data, delimiter=",")
 
