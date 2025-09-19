@@ -111,7 +111,6 @@ Implements **unsupervised clustering + anomaly detection** on latent features.
           ↓
 4.1. LatentSpace
     └── Dimensionality reduction (PCA), clustering utilities, error analysis
-
 4.2. Clustering
     └── Apply DBSCAN, KMeans, Isolation Forest, and distance-based methods
 
