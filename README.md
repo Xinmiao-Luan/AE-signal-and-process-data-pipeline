@@ -99,6 +99,7 @@ Implements **unsupervised clustering + anomaly detection** on latent features.
 ---
 
 ## Pipeline Flow
+```text
 1. DataPreprocessing
     └── Clean, segment, and align AE signals with process logs
           ↓
