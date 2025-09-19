@@ -108,9 +108,9 @@ Implements **unsupervised clustering + anomaly detection** on latent features.
 3. VAE
     └── Train Variational Autoencoder and extract latent variables
           ↓
-4.1 LatentSpace
+4.1. LatentSpace
     └── Dimensionality reduction (PCA), clustering utilities, error analysis
 
-4.2 Clustering
+4.2. Clustering
     └── Apply DBSCAN, KMeans, Isolation Forest, and distance-based methods
 
