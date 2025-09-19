@@ -1,6 +1,6 @@
 # Clustering
 
-This folder contains **unsupervised clustering and anomaly detection methods** applied to latent variables or spectrogram features. These methods help reveal structure in the data and flag potential process anomalies.
+This folder contains **unsupervised clustering methods** applied to latent variables with/without aligned process data. These methods help reveal structure in the data and flag potential process anomalies.
 
 ---
 
@@ -9,23 +9,18 @@ This folder contains **unsupervised clustering and anomaly detection methods** a
 ### `DBSCAN.py`
 - Implements **Density-Based Spatial Clustering of Applications with Noise (DBSCAN)**.  
 - Groups points into clusters based on density.  
-- Identifies noise/outliers that do not belong to any cluster.  
-- Useful for detecting irregular spectrogram segments or process deviations.
 
 ### `Distance.py`
 - Provides **distance metric utilities** (e.g., Euclidean, cosine).  
 - Used to compare latent vectors, cluster centroids, or AE features.  
-- Forms the basis for anomaly scoring and cluster evaluation.
 
 ### `Isolation Forest.py`
 - Implements **Isolation Forest** anomaly detection.  
 - Isolates rare points (defects or unusual events) with fewer splits.  
-- Efficient for high-dimensional AE latent features.
 
 ### `KMeans.py`
 - Implements **KMeans clustering**.  
 - Partitions latent vectors into `k` groups.  
-- Provides a simple and scalable baseline for unsupervised grouping.
 
 ---
 
