@@ -1,6 +1,6 @@
 # AE Signal and Process Data Pipeline
 
-This repository implements a modular pipeline for **acoustic emission (AE) signals** and **process data** in manufacturing.  
+This repository implements a modular pipeline for **acoustic emission (AE) signals** and **process data** in additive manufacturing processes.  
 It includes preprocessing, spectrogram processing, feature extraction (VAE), latent space analysis, clustering, and anomaly detection.  
 
 ---
