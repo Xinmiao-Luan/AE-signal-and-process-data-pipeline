@@ -30,5 +30,3 @@ The Clustering module enables:
 1. **Grouping** of latent variables into process-related patterns.  
 2. **Detection** of abnormal events via distance measures or isolation forests.  
 3. **Comparison** of different clustering algorithms for robustness.  
-
-This stage complements the **VAE latent space** by extracting meaningful structure and highlighting anomalies in AE + process data.
