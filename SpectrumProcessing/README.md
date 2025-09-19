@@ -31,5 +31,3 @@ The scripts in this folder provide the **visualization and alignment layer** of 
 3. Align signal data with process metadata (timestamps, operations).  
 4. Output ready-to-use data for feature extraction and modeling.
 
-This makes the spectrograms interpretable and usable alongside **process data and downstream ML workflows**.
-
