@@ -21,7 +21,9 @@ Preprocessing utilities to prepare **AE spectrograms** and **process logs** for 
 - `dataTransfer.py` → Reshapes spectrograms into fixed-size format for consistent input.  
 - `frequency.py` → Annotates spectrogram matrix with real frequency information.  
 - `labelMatch.py` → Aligns spectrogram data with quality labels via time synchronization.  
-- `timeCalculator.py` & `timeTableProcess.py` → Time alignment, duration calculation, and structured storage.  
+- `timeCalculator.py` & `timeTableProcess.py` → Time alignment, duration calculation, and structured storage.
+- `silentMomentDetector.py` Scans through AE spectrogram CSV files in a folder and flags files that contain near-silent signals.  
+
 
 **Purpose**
 - Segment raw logs into phases  
