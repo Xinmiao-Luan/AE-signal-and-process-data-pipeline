@@ -38,6 +38,10 @@ Implements process segmentation into **four classes** based on contour/infill tr
 - Utilities for time alignment, process duration calculation, and structured storage of spectrograms.  
 - According to classification, stores spectra **separately by operation stage**.
 
+### `silentMomentDetector.py`
+- Scans through AE spectrogram CSV files in a folder.  
+- Flags files that contain **near-silent signals**.  
+
 ---
 
 ## Purpose
