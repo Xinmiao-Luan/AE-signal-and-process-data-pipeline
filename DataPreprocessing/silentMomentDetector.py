@@ -2,12 +2,10 @@ import os
 import numpy as np
 import pandas as pd
 
-
 folder = "/Users/xluan3/Desktop/Projects/spectrograms"
 
-# Threshold for "silence
-silence_threshold = 1e-6   # adjust depending on your data scale
-min_nonzero_ratio = 0.01   # at least 1% of values should be > threshold
+# Thresholds for silence detection
+silence_threshold = 1e-6     # element-wise absolute amplitude threshold
 
 silent_files = []
 
@@ -16,20 +14,23 @@ for fname in os.listdir(folder):
         path = os.path.join(folder, fname)
 
         try:
-            df = pd.read_csv(path)
-            arr = df.values.flatten()
+            # Each file is expected to be a 200x98 matrix
+            df = pd.read_csv(path, header=None)
+            arr = df.values
 
-            # ratio of values above threshold
+            # if arr.shape != (200, 98):
+            #     print(f"Skipping {fname}: unexpected shape {arr.shape}")
+            #     continue
+
+            # Calculate ratio of elements above threshold
             ratio = np.mean(np.abs(arr) > silence_threshold)
 
-            if ratio < min_nonzero_ratio:
-                silent_files.append(fname)
-                print(f"Silent file detected: {fname} (non-zero ratio={ratio:.4f})")
 
         except Exception as e:
             print(f"Could not read {fname}: {e}")
 
-# result
+# Final result summary
+print("\n=== Summary ===")
 if silent_files:
     print(f"Total silent files: {len(silent_files)}")
     for f in silent_files:
